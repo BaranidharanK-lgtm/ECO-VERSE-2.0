@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+.git
+.gitignore
+.gemini
+*.zip
+*.log
+backend
+setup_node.ps1
+.env
+.env.local
+.vscode
+.idea
