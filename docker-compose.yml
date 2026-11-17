@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecoverse-frontend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ecoverse-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - ALLOWED_ORIGINS=*
+    restart: unless-stopped
